@@ -43,22 +43,16 @@ const CaseStudyGPS = () => {
               {t('caseStudy.GPS.subtitle')}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">xxx</div>
-                  <div className="text-muted-foreground">{t('caseStudy.GPS.metric1')}</div>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">xxx</div>
+                  <div className="text-3xl font-bold text-primary mb-2">62</div>
                   <div className="text-muted-foreground">{t('caseStudy.GPS.metric2')}</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">xxx</div>
+                  <div className="text-3xl font-bold text-primary mb-2">99%</div>
                   <div className="text-muted-foreground">{t('caseStudy.GPS.metric3')}</div>
                 </CardContent>
               </Card>
