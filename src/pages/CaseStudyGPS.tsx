@@ -1,13 +1,15 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { ArrowLeft, CreditCard, Shield, Zap, Lock } from "lucide-react";
+import { ArrowLeft, SatelliteDish, Shield, Zap, Lock } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useLanguage } from "@/contexts/LanguageContext";
 
-const CaseStudyPOS = () => {
+const CaseStudyGPS = () => {
   const navigate = useNavigate();
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen bg-background">
@@ -21,63 +23,63 @@ const CaseStudyPOS = () => {
             className="mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Home
+            {t('caseStudy.backToHome')}
           </Button>
 
           <div className="max-w-4xl mx-auto">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center">
-                <CreditCard className="w-8 h-8 text-white" />
+                <SatelliteDish className="w-8 h-8 text-white" />
               </div>
               <div>
-                <Badge className="mb-2">FinTech</Badge>
+                <Badge className="mb-2">{t('caseStudy.GPS.badge')}</Badge>
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground">
-                  POS Terminal Success Story
+                  {t('caseStudy.GPS.title')}
                 </h1>
               </div>
             </div>
 
             <p className="text-xl text-muted-foreground mb-12">
-              Secure payment processing with ultra-low latency connectivity
+              {t('caseStudy.GPS.subtitle')}
             </p>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">100%</div>
-                  <div className="text-muted-foreground">PCI-DSS Compliance</div>
+                  <div className="text-3xl font-bold text-primary mb-2">xxx</div>
+                  <div className="text-muted-foreground">{t('caseStudy.GPS.metric1')}</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">&lt;2s</div>
-                  <div className="text-muted-foreground">Auth Time</div>
+                  <div className="text-3xl font-bold text-primary mb-2">xxx</div>
+                  <div className="text-muted-foreground">{t('caseStudy.GPS.metric2')}</div>
                 </CardContent>
               </Card>
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">Private</div>
-                  <div className="text-muted-foreground">APN Security</div>
+                  <div className="text-3xl font-bold text-primary mb-2">xxx</div>
+                  <div className="text-muted-foreground">{t('caseStudy.GPS.metric3')}</div>
                 </CardContent>
               </Card>
             </div>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">The Challenge</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">{t('caseStudy.theChallenge')}</h2>
               <Card>
                 <CardContent className="p-8">
                   <p className="text-muted-foreground leading-relaxed mb-4">
-                    A leading payment processor needed to deploy thousands of mobile POS terminals across retail locations with strict security and performance requirements. The solution had to meet PCI-DSS compliance standards while delivering sub-2-second transaction authorization times.
+                    {t('caseStudy.GPS.challengeText1')}
                   </p>
                   <p className="text-muted-foreground leading-relaxed">
-                    Traditional public cellular networks couldn't guarantee the security isolation and low latency required for financial transactions, posing both compliance and customer experience risks.
+                    {t('caseStudy.GPS.challengeText2')}
                   </p>
                 </CardContent>
               </Card>
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Our Solution</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">{t('caseStudy.ourSolution')}</h2>
               <div className="space-y-6">
                 <Card>
                   <CardContent className="p-8">
@@ -87,10 +89,10 @@ const CaseStudyPOS = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-foreground mb-2">
-                          Private APN + VPN + InterCloud
+                          {t('caseStudy.GPS.solution1Title')}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          Implemented dedicated private APN with encrypted VPN tunnels, creating an isolated network environment that meets PCI-DSS security requirements for cardholder data transmission.
+                          {t('caseStudy.GPS.solution1Desc')}
                         </p>
                       </div>
                     </div>
@@ -105,10 +107,10 @@ const CaseStudyPOS = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-foreground mb-2">
-                          Optimized Network Routing
+                          {t('caseStudy.GPS.solution2Title')}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          Configured direct routing paths and QoS policies to ensure consistent sub-2-second transaction processing times, even during peak hours and high network congestion.
+                          {t('caseStudy.GPS.solution2Desc')}
                         </p>
                       </div>
                     </div>
@@ -123,10 +125,10 @@ const CaseStudyPOS = () => {
                       </div>
                       <div>
                         <h3 className="text-xl font-semibold text-foreground mb-2">
-                          Compliance Documentation
+                          {t('caseStudy.GPS.solution3Title')}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          Provided comprehensive security documentation and audit trails to support PCI-DSS certification, including network architecture diagrams and security attestations.
+                          {t('caseStudy.GPS.solution2Desc')}
                         </p>
                       </div>
                     </div>
@@ -136,7 +138,7 @@ const CaseStudyPOS = () => {
             </section>
 
             <section className="mb-12">
-              <h2 className="text-3xl font-bold text-foreground mb-6">Results</h2>
+              <h2 className="text-3xl font-bold text-foreground mb-6">{t('caseStudy.results')}</h2>
               <Card className="bg-gradient-to-br from-primary/5 to-primary/10 border-primary/20">
                 <CardContent className="p-8">
                   <ul className="space-y-4">
@@ -145,7 +147,7 @@ const CaseStudyPOS = () => {
                         <span className="text-white text-xs">✓</span>
                       </div>
                       <p className="text-foreground">
-                        <span className="font-semibold">100% PCI-DSS compliance</span> achieved on first audit
+                        {t('caseStudy.GPS.result1')}
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
@@ -153,7 +155,7 @@ const CaseStudyPOS = () => {
                         <span className="text-white text-xs">✓</span>
                       </div>
                       <p className="text-foreground">
-                        <span className="font-semibold">Average 1.7s</span> transaction authorization time
+                        {t('caseStudy.GPS.result2')}
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
@@ -161,7 +163,7 @@ const CaseStudyPOS = () => {
                         <span className="text-white text-xs">✓</span>
                       </div>
                       <p className="text-foreground">
-                        <span className="font-semibold">Zero security incidents</span> since deployment
+                        {t('caseStudy.GPS.result3')}
                       </p>
                     </li>
                     <li className="flex items-start gap-3">
@@ -169,7 +171,7 @@ const CaseStudyPOS = () => {
                         <span className="text-white text-xs">✓</span>
                       </div>
                       <p className="text-foreground">
-                        <span className="font-semibold">99.99% transaction success rate</span> across all terminals
+                        {t('caseStudy.GPS.result4')}
                       </p>
                     </li>
                   </ul>
@@ -180,18 +182,26 @@ const CaseStudyPOS = () => {
             <Card className="bg-gradient-to-br from-primary to-primary/80 border-0">
               <CardContent className="p-8 text-center">
                 <h3 className="text-2xl font-bold text-white mb-4">
-                  Need Secure Payment Connectivity?
+                  {t('caseStudy.GPS.ctaTitle')}
                 </h3>
                 <p className="text-white/90 mb-6">
-                  Let's discuss PCI-DSS compliant IoT solutions for your FinTech application
+                  {t('caseStudy.GPS.ctaDesc')}
                 </p>
-                <Button 
+                <Button
                   size="lg"
                   variant="secondary"
-                  onClick={() => navigate('/#contact')}
-                  className="bg-white text-primary hover:bg-white/90"
+                  onClick={() => {
+                    navigate('/#contact');
+                    setTimeout(() => {
+                      const contactElement = document.getElementById('contact');
+                      if (contactElement) {
+                        contactElement.scrollIntoView({ behavior: 'instant' }); // "auto" | "instant" | "smooth"
+                      }
+                    }, 50);
+                  }}
+                    className="bg-white text-primary hover:bg-white/90"
                 >
-                  Contact Us
+                  {t('caseStudy.contactUs')}
                 </Button>
               </CardContent>
             </Card>
@@ -204,4 +214,4 @@ const CaseStudyPOS = () => {
   );
 };
 
-export default CaseStudyPOS;
+export default CaseStudyGPS;

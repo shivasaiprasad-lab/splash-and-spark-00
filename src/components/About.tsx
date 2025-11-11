@@ -8,11 +8,11 @@ const About = () => {
   const { t } = useLanguage();
   
   const operations = [
-    { country: t('about.china'), location: t('about.chinaLocation'), active: true },
+    { country: t('about.china1'), location: t('about.chinaLocation'), active: true },
+    { country: t('about.china2'), location: t('about.HKLocation'), active: true },
     { country: t('about.india'), location: t('about.indiaLocation'), active: true },
     { country: t('about.eu'), location: t('about.euLocation'), active: true },
-    { country: t('about.usa'), location: t('about.usaLocation'), active: true },
-    { country: t('about.singapore'), location: t('about.singaporeLocation'), active: true }
+    { country: t('about.usa'), location: t('about.usaLocation'), active: true }
   ];
 
   const compliance = [

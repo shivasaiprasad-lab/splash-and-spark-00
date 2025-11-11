@@ -43,13 +43,7 @@ const CaseStudySmartMeter = () => {
               {t('caseStudy.smartMeter.subtitle')}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-              <Card>
-                <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">800K</div>
-                  <div className="text-muted-foreground">{t('caseStudy.smartMeter.metric1')}</div>
-                </CardContent>
-              </Card>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <Card>
                 <CardContent className="p-6 text-center">
                   <div className="text-3xl font-bold text-primary mb-2">10 Years</div>
@@ -187,10 +181,18 @@ const CaseStudySmartMeter = () => {
                 <p className="text-white/90 mb-6">
                   {t('caseStudy.smartMeter.ctaDesc')}
                 </p>
-                <Button 
+                <Button
                   size="lg"
                   variant="secondary"
-                  onClick={() => navigate('/#contact')}
+                  onClick={() => {
+                    navigate('/#contact');
+                    setTimeout(() => {
+                      const contactElement = document.getElementById('contact');
+                      if (contactElement) {
+                        contactElement.scrollIntoView({ behavior: 'instant' }); // "auto" | "instant" | "smooth"
+                      }
+                    }, 50);
+                  }}
                   className="bg-white text-primary hover:bg-white/90"
                 >
                   {t('caseStudy.contactUs')}

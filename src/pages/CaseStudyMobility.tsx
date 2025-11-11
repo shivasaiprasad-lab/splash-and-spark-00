@@ -185,10 +185,18 @@ const CaseStudyMobility = () => {
                 <p className="text-white/90 mb-6">
                   Launch TRAI-compliant promotional SMS in 48 hours
                 </p>
-                <Button 
+                <Button
                   size="lg"
                   variant="secondary"
-                  onClick={() => navigate('/#contact')}
+                  onClick={() => {
+                    navigate('/#contact');
+                    setTimeout(() => {
+                      const contactElement = document.getElementById('contact');
+                      if (contactElement) {
+                        contactElement.scrollIntoView({ behavior: 'instant' }); // "auto" | "instant" | "smooth"
+                      }
+                    }, 50);
+                  }}
                   className="bg-white text-primary hover:bg-white/90"
                 >
                   Contact Us

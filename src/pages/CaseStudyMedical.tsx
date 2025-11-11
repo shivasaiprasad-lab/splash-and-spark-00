@@ -185,10 +185,18 @@ const CaseStudyMedical = () => {
                 <p className="text-white/90 mb-6">
                   Get expert guidance on regulatory compliance and global connectivity
                 </p>
-                <Button 
+                <Button
                   size="lg"
                   variant="secondary"
-                  onClick={() => navigate('/#contact')}
+                  onClick={() => {
+                    navigate('/#contact');
+                    setTimeout(() => {
+                      const contactElement = document.getElementById('contact');
+                      if (contactElement) {
+                        contactElement.scrollIntoView({ behavior: 'instant' }); // "auto" | "instant" | "smooth"
+                      }
+                    }, 50);
+                  }}
                   className="bg-white text-primary hover:bg-white/90"
                 >
                   Contact Us

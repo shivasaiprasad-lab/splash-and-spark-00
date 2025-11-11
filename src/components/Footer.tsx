@@ -1,5 +1,5 @@
 import logo from "@/assets/iisl-logo.png";
-import { Network, Mail, Phone, MapPin, Linkedin, MessageCircle } from "lucide-react";
+import { Network, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 const Footer = () => {
@@ -44,26 +44,20 @@ const Footer = () => {
 
           {/* Contact */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t('footer.contactUs')}</h3>
-            <ul className="space-y-3 mb-6">
+            <h3 className="font-semibold text-foreground mb-8">{t('footer.contactUs')}</h3>
+            <ul className="space-y-3 mb-5">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
                 <a href="mailto:INCLUSIVE-SALES@inclusive.com.cn" className="hover:text-primary transition-colors">
                     INCLUSIVE-SALES@inclusive.com.cn
                 </a>
               </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <MessageCircle className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="https://wa.me/15551234567" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  {t('footer.whatsappSupport')}
-                </a>
-              </li>
-              <li className="flex items-start gap-2 text-muted-foreground">
-                <Linkedin className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="https://linkedin.com/company/isl" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">
-                  LinkedIn
-                </a>
-              </li>
+              {/*<li className="flex items-start gap-2 text-muted-foreground">*/}
+              {/*  <Linkedin className="w-5 h-5 mt-0.5 flex-shrink-0" />*/}
+              {/*  <a href="https://linkedin.com/company/isl" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">*/}
+              {/*    LinkedIn*/}
+              {/*  </a>*/}
+              {/*</li>*/}
             </ul>
             
             <div className="space-y-2">

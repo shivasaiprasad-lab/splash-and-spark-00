@@ -11,8 +11,8 @@ export default defineConfig(({ mode }) => ({
     allowedHosts: [
         "localhost",
         "172.17.0.1",
-        "www.inclusive.global",
-        "inclusive.global",],
+        "www.inclusive.com.cn",
+        "inclusive.com.cn",],
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
