@@ -122,7 +122,7 @@ const CaseStudyGPS = () => {
                           {t('caseStudy.GPS.solution3Title')}
                         </h3>
                         <p className="text-muted-foreground leading-relaxed">
-                          {t('caseStudy.GPS.solution2Desc')}
+                          {t('caseStudy.GPS.solution3Desc')}
                         </p>
                       </div>
                     </div>

@@ -145,7 +145,7 @@ const CaseStudies = () => {
         {/* Customer Logos Section */}
         <div className="text-center overflow-hidden">
           <h3 className="text-2xl font-bold text-foreground mb-8">
-            Trusted by Industry Leaders
+            {t('caseStudy.slogan')}
           </h3>
           <div 
             className="relative flex overflow-hidden"
