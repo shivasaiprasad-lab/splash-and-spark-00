@@ -45,15 +45,14 @@ const Header = () => {
   }, []);
 
   // 按类别分组合作伙伴
-  const partnersByCategory = partners?.reduce((acc, partner) => {
+  const partnersByCategory = partners?.reduce((acc: Record<string, any[]>, partner: any) => {
     if (!acc[partner.category]) {
       acc[partner.category] = [];
     }
     acc[partner.category].push(partner);
     return acc;
-  }, {});
+  }, {} as Record<string, any[]>);
 
-  // @ts-expect-error
   return (
       <header className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
         <div className="container mx-auto px-4">
@@ -84,7 +83,7 @@ const Header = () => {
                   ) : partnersByCategory && Object.keys(partnersByCategory).length > 0 ? (
                       <>
                         {Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
-                            categoryPartners.map((partner) => (
+                            (categoryPartners as any[]).map((partner: any) => (
                                 <DropdownMenuItem
                                     key={partner.id}
                                     className="cursor-pointer"
@@ -180,7 +179,7 @@ const Header = () => {
                           <span className="text-sm text-muted-foreground">{t('header.loading')}</span>
                       ) : partnersByCategory && Object.keys(partnersByCategory).length > 0 ? (
                           Object.entries(partnersByCategory).map(([category, categoryPartners]) => (
-                              categoryPartners.map((partner) => (
+                              (categoryPartners as any[]).map((partner: any) => (
                                   <a
                                       key={partner.id}
                                       href={partner.website_url || '#'}

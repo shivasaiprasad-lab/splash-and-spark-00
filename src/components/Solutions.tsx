@@ -2,46 +2,41 @@ import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Smartphone, Shield, MessageSquare, FileCheck, Database } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useState } from "react";
+import SolutionDetailDialog from "./SolutionDetailDialog";
 
 const Solutions = () => {
   const { t } = useLanguage();
+  const [selectedSolution, setSelectedSolution] = useState<{
+    key: 'globalIotSim' | 'privateApn' | 'smsVoice';
+    icon: any;
+    title: string;
+    benefit: string;
+  } | null>(null);
   
   const solutions = [
     {
+      key: 'globalIotSim' as const,
       icon: Smartphone,
       title: t('solutions.globalIotSim'),
       description: t('solutions.globalIotSimDesc'),
       benefit: t('solutions.globalIotSimBenefit')
     },
     {
+      key: 'privateApn' as const,
       icon: Shield,
       title: t('solutions.privateApn'),
       description: t('solutions.privateApnDesc'),
       benefit: t('solutions.privateApnBenefit')
     },
     {
+      key: 'smsVoice' as const,
       icon: MessageSquare,
       title: t('solutions.smsVoice'),
       description: t('solutions.smsVoiceDesc'),
       benefit: t('solutions.smsVoiceBenefit')
     },
-    // {
-    //   icon: FileCheck,
-    //   title: t('solutions.chinaApproval'),
-    //   description: t('solutions.chinaApprovalDesc'),
-    //   benefit: t('solutions.chinaApprovalBenefit')
-    // },
-    // {
-    //   icon: Database,
-    //   title: t('solutions.indiaDlt'),
-    //   description: t('solutions.indiaDltDesc'),
-    //   benefit: t('solutions.indiaDltBenefit')
-    // }
   ];
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   return (
     <section id="solutions" className="py-24 bg-muted/30">
@@ -84,7 +79,12 @@ const Solutions = () => {
                   <Button 
                     variant="outline" 
                     className="w-full"
-                    onClick={scrollToContact}
+                    onClick={() => setSelectedSolution({
+                      key: solution.key,
+                      icon: solution.icon,
+                      title: solution.title,
+                      benefit: solution.benefit
+                    })}
                   >
                     {t('solutions.learnMore')}
                   </Button>
@@ -94,6 +94,17 @@ const Solutions = () => {
           })}
         </div>
       </div>
+
+      {selectedSolution && (
+        <SolutionDetailDialog
+          open={!!selectedSolution}
+          onOpenChange={(open) => !open && setSelectedSolution(null)}
+          solutionKey={selectedSolution.key}
+          icon={selectedSolution.icon}
+          title={selectedSolution.title}
+          benefit={selectedSolution.benefit}
+        />
+      )}
     </section>
   );
 };
