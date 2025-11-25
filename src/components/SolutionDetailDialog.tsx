@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import {
   Dialog,
   DialogContent,
@@ -10,7 +9,6 @@ import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { LucideIcon } from "lucide-react";
-import mermaid from "mermaid";
 
 interface SolutionDetailDialogProps {
   open: boolean;
@@ -30,26 +28,6 @@ const SolutionDetailDialog = ({
   benefit,
 }: SolutionDetailDialogProps) => {
   const { t } = useLanguage();
-
-  useEffect(() => {
-    mermaid.initialize({ 
-      startOnLoad: true,
-      theme: 'base',
-      themeVariables: {
-        primaryColor: '#2563eb',
-        primaryTextColor: '#fff',
-        primaryBorderColor: '#1e40af',
-        lineColor: '#64748b',
-        secondaryColor: '#10b981',
-        tertiaryColor: '#f59e0b',
-      }
-    });
-    if (open) {
-      setTimeout(() => {
-        mermaid.run();
-      }, 100);
-    }
-  }, [open, solutionKey]);
   
   const detailKey = `${solutionKey}Detail`;
   const overview = t(`solutions.${detailKey}.overview`);
@@ -79,54 +57,6 @@ const SolutionDetailDialog = ({
     }, 100);
   };
 
-  const getDiagram = () => {
-    switch (solutionKey) {
-      case 'globalIotSim':
-        return `graph TD
-    A[IoT Device] -->|Global Coverage| B[IISL Global SIM]
-    B --> C{Network Selection}
-    C -->|Auto Switch| D[Carrier A]
-    C -->|Auto Switch| E[Carrier B]
-    C -->|Auto Switch| F[Carrier C]
-    D --> G[Internet/Cloud]
-    E --> G
-    F --> G
-    G --> H[Your Application]
-    
-    style B fill:#2563eb,stroke:#1e40af,color:#fff
-    style H fill:#10b981,stroke:#059669,color:#fff`;
-      
-      case 'privateApn':
-        return `graph LR
-    A[IoT Devices] -->|Encrypted| B[Private APN]
-    B -->|Isolated Network| C[Security Layer]
-    C -->|VPN Tunnel| D[Corporate Network]
-    D --> E[Internal Systems]
-    
-    F[Public Internet] -.->|Blocked| B
-    
-    style B fill:#2563eb,stroke:#1e40af,color:#fff
-    style C fill:#f59e0b,stroke:#d97706,color:#fff
-    style E fill:#10b981,stroke:#059669,color:#fff`;
-      
-      case 'smsVoice':
-        return `sequenceDiagram
-    participant D as IoT Device
-    participant P as IISL Platform
-    participant C as Carrier Network
-    participant U as User/System
-    
-    D->>P: Send Alert/Data
-    P->>C: Route SMS/Voice
-    C->>U: Deliver Message
-    U->>C: Response/Command
-    C->>P: Route Response
-    P->>D: Execute Command
-    
-    Note over D,U: Two-Way Communication`;
-    }
-  };
-
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="max-w-3xl max-h-[85vh] overflow-y-auto">
@@ -148,21 +78,6 @@ const SolutionDetailDialog = ({
             <p className="text-muted-foreground leading-relaxed">
               {overview}
             </p>
-          </div>
-
-          <Separator />
-
-          {/* Architecture Diagram */}
-          <div>
-            <h3 className="text-lg font-semibold text-foreground mb-4 flex items-center gap-2">
-              <span className="w-1 h-6 bg-primary rounded-full" />
-              {t('solutions.architecture')}
-            </h3>
-            <div className="bg-muted/30 rounded-lg p-6 border border-border/50">
-              <div className="mermaid-diagram">
-                {getDiagram()}
-              </div>
-            </div>
           </div>
 
           <Separator />
