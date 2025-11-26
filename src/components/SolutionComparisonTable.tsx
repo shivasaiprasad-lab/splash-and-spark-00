@@ -47,13 +47,13 @@ const SolutionComparisonTable = () => {
       <Table className="min-w-[800px]">
         <TableHeader>
           <TableRow className="bg-muted/50">
-            <TableHead className="w-[200px] sticky left-0 bg-background z-10 font-semibold text-foreground">
+            <TableHead className="w-[200px] sticky left-0 top-0 bg-muted/50 z-20 font-semibold text-foreground">
               {t('solutions.comparison.features')}
             </TableHead>
             {solutions.map((solution) => {
               const Icon = solution.icon;
               return (
-                <TableHead key={solution.key} className="text-center">
+                <TableHead key={solution.key} className="text-center sticky top-0 bg-muted/50 z-10">
                   <div className="flex flex-col items-center gap-3 py-4">
                     <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                       <Icon className="w-7 h-7 text-white" />
