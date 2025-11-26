@@ -15,6 +15,7 @@ import {
 import { Switch } from "@/components/ui/switch";
 import { Label } from "@/components/ui/label";
 import { ChevronDown, Menu } from "lucide-react";
+import { Link } from "react-router-dom";
 import logo from "@/assets/iisl-logo.png";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState, useEffect } from "react";
@@ -107,20 +108,20 @@ const Header = () => {
                   <ChevronDown className="h-4 w-4" />
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-popover">
-                  <DropdownMenuItem className="cursor-pointer">
-                    {t('header.iotConnectivity')}
+                  <DropdownMenuItem asChild>
+                    <Link to="/solutions/global-iot-sim" className="cursor-pointer">
+                      {t('solutions.globalIotSim')}
+                    </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                    {t('header.m2mPlatform')}
+                  <DropdownMenuItem asChild>
+                    <Link to="/solutions/private-apn" className="cursor-pointer">
+                      {t('solutions.privateApn')}
+                    </Link>
                   </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                    {t('header.deviceManagement')}
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                    {t('header.analytics')}
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="cursor-pointer">
-                    {t('header.customSolutions')}
+                  <DropdownMenuItem asChild>
+                    <Link to="/solutions/sms-voice" className="cursor-pointer">
+                      {t('solutions.smsVoice')}
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
@@ -202,21 +203,15 @@ const Header = () => {
                   <div className="py-2">
                     <p className="font-semibold text-foreground mb-2">{t('header.solutions')}</p>
                     <div className="flex flex-col gap-2 pl-4">
-                      <a href="#solutions" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        {t('header.iotConnectivity')}
-                      </a>
-                      <a href="#solutions" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        {t('header.m2mPlatform')}
-                      </a>
-                      <a href="#solutions" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        {t('header.deviceManagement')}
-                      </a>
-                      <a href="#solutions" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        {t('header.analytics')}
-                      </a>
-                      <a href="#solutions" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
-                        {t('header.customSolutions')}
-                      </a>
+                      <Link to="/solutions/global-iot-sim" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                        {t('solutions.globalIotSim')}
+                      </Link>
+                      <Link to="/solutions/private-apn" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                        {t('solutions.privateApn')}
+                      </Link>
+                      <Link to="/solutions/sms-voice" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                        {t('solutions.smsVoice')}
+                      </Link>
                     </div>
                   </div>
 
