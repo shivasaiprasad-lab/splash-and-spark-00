@@ -11,6 +11,9 @@ import CaseStudySmartMeter from "./pages/CaseStudySmartMeter";
 import CaseStudyGPS from "./pages/CaseStudyGPS";
 import CaseStudyMedical from "./pages/CaseStudyMedical";
 import CaseStudyMobility from "./pages/CaseStudyMobility";
+import SolutionGlobalIotSim from "./pages/SolutionGlobalIotSim";
+import SolutionPrivateApn from "./pages/SolutionPrivateApn";
+import SolutionSmsVoice from "./pages/SolutionSmsVoice";
 import ScrollToTop from "./components/ScrollToTop"
 
 const queryClient = new QueryClient();
@@ -30,6 +33,9 @@ const App = () => (
             <Route path="/case-study/GPS-terminal" element={<CaseStudyGPS />} />
             <Route path="/case-study/medical-device" element={<CaseStudyMedical />} />
             <Route path="/case-study/shared-mobility" element={<CaseStudyMobility />} />
+            <Route path="/solutions/global-iot-sim" element={<SolutionGlobalIotSim />} />
+            <Route path="/solutions/private-apn" element={<SolutionPrivateApn />} />
+            <Route path="/solutions/sms-voice" element={<SolutionSmsVoice />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
