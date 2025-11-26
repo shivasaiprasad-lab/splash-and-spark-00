@@ -141,6 +141,18 @@ const enTranslations = {
     keyFeatures: 'Key Features',
     technicalSpecs: 'Technical Specifications',
     useCases: 'Use Cases',
+    viewMode: {
+      cards: 'Card View',
+      compare: 'Compare All',
+    },
+    comparison: {
+      features: 'Features',
+      overview: 'Overview',
+      feature: 'Feature',
+      spec: 'Specification',
+      useCase: 'Use Case',
+      requestConsultation: 'Request Consultation',
+    },
     globalIotSimDetail: {
       overview: 'Our Global IoT SIM solution provides seamless connectivity across 180+ countries with automatic network switching, ensuring your devices stay connected wherever they are deployed.',
       feature1: 'eUICC Technology - Remote SIM provisioning and over-the-air profile management',
@@ -456,6 +468,18 @@ const zhTranslations = {
     keyFeatures: '核心功能',
     technicalSpecs: '技术规格',
     useCases: '应用场景',
+    viewMode: {
+      cards: '卡片视图',
+      compare: '对比所有方案',
+    },
+    comparison: {
+      features: '功能特性',
+      overview: '概述',
+      feature: '功能',
+      spec: '规格',
+      useCase: '应用场景',
+      requestConsultation: '申请咨询',
+    },
     globalIotSimDetail: {
       overview: '我们的全球物联网SIM卡解决方案可在180多个国家提供无缝连接服务，支持自动网络切换，确保您的设备无论部署在何处都能保持稳定连接。',
       feature1: 'eUICC技术 - 远程SIM卡配置与空中配置文件管理',

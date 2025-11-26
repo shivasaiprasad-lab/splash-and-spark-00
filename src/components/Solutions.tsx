@@ -1,12 +1,15 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Smartphone, Shield, MessageSquare, FileCheck, Database } from "lucide-react";
+import { Smartphone, Shield, MessageSquare } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { useState } from "react";
 import SolutionDetailDialog from "./SolutionDetailDialog";
+import SolutionComparisonTable from "./SolutionComparisonTable";
+import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
 
 const Solutions = () => {
   const { t } = useLanguage();
+  const [viewMode, setViewMode] = useState<'cards' | 'compare'>('cards');
   const [selectedSolution, setSelectedSolution] = useState<{
     key: 'globalIotSim' | 'privateApn' | 'smsVoice';
     icon: any;
@@ -41,7 +44,7 @@ const Solutions = () => {
   return (
     <section id="solutions" className="py-24 bg-muted/30">
       <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             {t('solutions.title')}
           </h2>
@@ -50,49 +53,62 @@ const Solutions = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-          {solutions.map((solution, index) => {
-            const Icon = solution.icon;
-            return (
-              <Card 
-                key={index}
-                className="group hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/50 bg-card flex flex-col"
-              >
-                <CardContent className="p-8 flex-1">
-                  <div className="mb-6 relative">
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <Icon className="w-8 h-8 text-white" />
-                    </div>
-                    <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-                  <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
-                    {solution.benefit}
-                  </div>
-                  <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
-                    {solution.title}
-                  </h3>
-                  <p className="text-muted-foreground leading-relaxed">
-                    {solution.description}
-                  </p>
-                </CardContent>
-                <CardFooter className="p-8 pt-0">
-                  <Button 
-                    variant="outline" 
-                    className="w-full"
-                    onClick={() => setSelectedSolution({
-                      key: solution.key,
-                      icon: solution.icon,
-                      title: solution.title,
-                      benefit: solution.benefit
-                    })}
+        <Tabs value={viewMode} onValueChange={(value) => setViewMode(value as 'cards' | 'compare')} className="max-w-7xl mx-auto">
+          <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+            <TabsTrigger value="cards">{t('solutions.viewMode.cards')}</TabsTrigger>
+            <TabsTrigger value="compare">{t('solutions.viewMode.compare')}</TabsTrigger>
+          </TabsList>
+
+          <TabsContent value="cards">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {solutions.map((solution, index) => {
+                const Icon = solution.icon;
+                return (
+                  <Card 
+                    key={index}
+                    className="group hover:shadow-xl transition-all duration-300 border-border/50 hover:border-primary/50 bg-card flex flex-col"
                   >
-                    {t('solutions.learnMore')}
-                  </Button>
-                </CardFooter>
-              </Card>
-            );
-          })}
-        </div>
+                    <CardContent className="p-8 flex-1">
+                      <div className="mb-6 relative">
+                        <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                        <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                      </div>
+                      <div className="inline-block px-3 py-1 rounded-full bg-primary/10 text-primary text-sm font-medium mb-4">
+                        {solution.benefit}
+                      </div>
+                      <h3 className="text-xl font-semibold mb-3 text-foreground group-hover:text-primary transition-colors">
+                        {solution.title}
+                      </h3>
+                      <p className="text-muted-foreground leading-relaxed">
+                        {solution.description}
+                      </p>
+                    </CardContent>
+                    <CardFooter className="p-8 pt-0">
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => setSelectedSolution({
+                          key: solution.key,
+                          icon: solution.icon,
+                          title: solution.title,
+                          benefit: solution.benefit
+                        })}
+                      >
+                        {t('solutions.learnMore')}
+                      </Button>
+                    </CardFooter>
+                  </Card>
+                );
+              })}
+            </div>
+          </TabsContent>
+
+          <TabsContent value="compare">
+            <SolutionComparisonTable />
+          </TabsContent>
+        </Tabs>
       </div>
 
       {selectedSolution && (
