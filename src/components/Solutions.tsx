@@ -8,7 +8,7 @@ import SolutionDetailDialog from "./SolutionDetailDialog";
 const Solutions = () => {
   const { t } = useLanguage();
   const [selectedSolution, setSelectedSolution] = useState<{
-    key: 'globalIotSim' | 'privateApn' | 'smsVoice';
+    key: 'globalIotSim' | 'privateApn' | 'smsVoice' | 'iotPortal' | 'gpsTracking';
     icon: any;
     title: string;
     benefit: string;
@@ -35,6 +35,20 @@ const Solutions = () => {
       title: t('solutions.smsVoice'),
       description: t('solutions.smsVoiceDesc'),
       benefit: t('solutions.smsVoiceBenefit')
+    },
+    {
+      key: 'iotPortal' as const,
+      icon: Smartphone,
+      title: t('solutions.iotPortal'),
+      description: t('solutions.iotPortalDesc'),
+      benefit: t('solutions.iotPortalBenefit')
+    },
+    {
+      key: 'gpsTracking' as const,
+      icon: Smartphone,
+      title: t('solutions.gpsTracking'),
+      description: t('solutions.gpsTrackingDesc'),
+      benefit: t('solutions.gpsTrackingBenefit')
     },
   ];
 

@@ -123,6 +123,16 @@ const Header = () => {
                       {t('solutions.smsVoice')}
                     </Link>
                   </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/solutions/iot-portal" className="cursor-pointer">
+                      {t('solutions.iotPortal')}
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/solutions/gps-tracking" className="cursor-pointer">
+                      {t('solutions.gpsTracking')}
+                    </Link>
+                  </DropdownMenuItem>
                 </DropdownMenuContent>
               </DropdownMenu>
 
@@ -211,6 +221,12 @@ const Header = () => {
                       </Link>
                       <Link to="/solutions/sms-voice" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
                         {t('solutions.smsVoice')}
+                      </Link>
+                      <Link to="/solutions/iot-portal" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                        {t('solutions.iotPortal')}
+                      </Link>
+                      <Link to="/solutions/gps-tracking" className="text-sm text-foreground hover:text-primary transition-colors" onClick={() => setMobileMenuOpen(false)}>
+                        {t('solutions.gpsTracking')}
                       </Link>
                     </div>
                   </div>

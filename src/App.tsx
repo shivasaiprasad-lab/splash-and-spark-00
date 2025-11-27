@@ -14,6 +14,8 @@ import CaseStudyMobility from "./pages/CaseStudyMobility";
 import SolutionGlobalIotSim from "./pages/SolutionGlobalIotSim";
 import SolutionPrivateApn from "./pages/SolutionPrivateApn";
 import SolutionSmsVoice from "./pages/SolutionSmsVoice";
+import SolutionIotPortal from "./pages/SolutionIotPortal";
+import SolutionGpsTracking from "./pages/SolutionGpsTracking";
 import ScrollToTop from "./components/ScrollToTop"
 
 const queryClient = new QueryClient();
@@ -36,6 +38,8 @@ const App = () => (
             <Route path="/solutions/global-iot-sim" element={<SolutionGlobalIotSim />} />
             <Route path="/solutions/private-apn" element={<SolutionPrivateApn />} />
             <Route path="/solutions/sms-voice" element={<SolutionSmsVoice />} />
+            <Route path="/solutions/iot-portal" element={<SolutionIotPortal />} />
+            <Route path="/solutions/gps-tracking" element={<SolutionGpsTracking />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
