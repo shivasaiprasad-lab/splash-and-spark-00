@@ -13,7 +13,7 @@ import { LucideIcon } from "lucide-react";
 interface SolutionDetailDialogProps {
   open: boolean;
   onOpenChange: (open: boolean) => void;
-  solutionKey: 'globalIotSim' | 'privateApn' | 'smsVoice';
+  solutionKey: 'globalIotSim' | 'privateApn' | 'smsVoice' | 'iotPortal' | 'gpsTracking';
   icon: LucideIcon;
   title: string;
   benefit: string;
