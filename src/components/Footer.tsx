@@ -1,10 +1,24 @@
 import logo from "@/assets/iisl-logo.png";
 import { Network, Mail, Phone, MapPin, Linkedin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { usePartnersMenu } from "@/contexts/PartnersMenuContext";
+import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const { t } = useLanguage();
-  
+  const { openPartnersMenu } = usePartnersMenu();
+  const navigate = useNavigate();
+
+  // 处理 Partners 链接点击（兼容数据加载延迟）
+  const handlePartnersClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+
+    // 2. 延迟触发菜单
+    setTimeout(() => {
+      openPartnersMenu();
+    }, 300);
+  };
+
   return (
     <footer className="bg-card border-t border-border">
       <div className="container mx-auto px-4 py-12">
@@ -22,12 +36,13 @@ const Footer = () => {
 
           {/* Quick links */}
           <div>
-            <h3 className="font-semibold text-foreground mb-4">{t('footer.services')}</h3>
+            <h3 className="font-semibold text-foreground mb-4">{t('header.solutions')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.iotConnectivity')}</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.m2mSolutions')}</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.networkSecurity')}</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.dataManagement')}</a></li>
+              <li><a href="/solutions/global-iot-sim" className="text-muted-foreground hover:text-primary transition-colors">{t("solutions.globalIotSim")}</a></li>
+              <li><a href="/solutions/private-apn" className="text-muted-foreground hover:text-primary transition-colors">{t("solutions.privateApn")}</a></li>
+              <li><a href="/solutions/sms-voice" className="text-muted-foreground hover:text-primary transition-colors">{t('solutions.smsVoice')}</a></li>
+              <li><a href="/solutions/iot-portal" className="text-muted-foreground hover:text-primary transition-colors">{t('solutions.iotPortal')}</a></li>
+              <li><a href="/solutions/gps-tracking" className="text-muted-foreground hover:text-primary transition-colors">{t('solutions.gpsTracking')}</a></li>
             </ul>
           </div>
 
@@ -35,10 +50,10 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold text-foreground mb-4">{t('footer.company')}</h3>
             <ul className="space-y-2">
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.aboutUs')}</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.careers')}</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.partners')}</a></li>
-              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.contact')}</a></li>
+              <li><a href="/#about" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.aboutUs')}</a></li>
+              <li><a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.careers')}</a></li>
+              <li><a href="#" className="text-muted-foreground hover:text-primary transition-colors" onClick={handlePartnersClick}>{t('footer.partners')}</a></li>
+              <li><a href="/#contact" className="text-muted-foreground hover:text-primary transition-colors">{t('footer.contact')}</a></li>
             </ul>
           </div>
 
@@ -48,8 +63,8 @@ const Footer = () => {
             <ul className="space-y-3 mb-5">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="mailto:INCLUSIVE-SALES@inclusive.com.cn" className="hover:text-primary transition-colors">
-                    INCLUSIVE-SALES@inclusive.com.cn
+                <a href="mailto:Inclusive-Sales@inclusive.com.cn" className="hover:text-primary transition-colors">
+                  Inclusive-Sales@inclusive.com.cn
                 </a>
               </li>
               {/*<li className="flex items-start gap-2 text-muted-foreground">*/}

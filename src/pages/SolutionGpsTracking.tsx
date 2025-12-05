@@ -1,119 +1,130 @@
 import { useLanguage } from "@/contexts/LanguageContext";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Smartphone } from "lucide-react";
+import { Smartphone, CheckCircle, Zap } from "lucide-react";
 
 const SolutionGpsTracking = () => {
   const { t } = useLanguage();
 
+  // 统一的联系我们滚动逻辑（兼容锚点不存在的情况）
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact');
     if (contactSection) {
       contactSection.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      window.location.href = '/#contact';
     }
   };
 
   return (
     <div className="min-h-screen bg-background">
       <Header />
-      
-      {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-primary/5 to-secondary/5">
-        <div className="container mx-auto max-w-4xl text-center">
-          <Badge className="mb-4">{t('solutions.gpsTrackingBenefit')}</Badge>
-          <div className="mb-6 inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-secondary">
-            <Smartphone className="w-10 h-10 text-white" />
+
+      {/* 统一外层结构：main 包裹 + 一致的内边距 */}
+      <main className="pt-24 pb-16">
+        <div className="container mx-auto px-4">
+          {/* Hero Section（完全匹配目标格式） */}
+          <div className="max-w-4xl mx-auto text-center mb-16">
+            <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-6">
+              <Smartphone className="w-10 h-10 text-white" />
+            </div>
+            <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-4">
+              {t('solutions.gpsTracking')}
+            </h1>
+            <Badge variant="secondary" className="mb-6">
+              {t('solutions.gpsTrackingBenefit')}
+            </Badge>
+            <p className="text-xl text-muted-foreground leading-relaxed">
+              {t('solutions.gpsTrackingDesc')}
+            </p>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 text-foreground">
-            {t('solutions.gpsTracking')}
-          </h1>
-          <p className="text-xl text-muted-foreground mb-8">
-            {t('solutions.gpsTrackingDesc')}
-          </p>
-        </div>
-      </section>
 
-      {/* Overview Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-6 text-foreground">Overview</h2>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            {t('solutions.gpsTrackingDetail.overview')}
-          </p>
-        </div>
-      </section>
+          {/* Overview Section - 完全保留原始结构和样式 */}
+          <section className="py-16 px-4">
+            <div className="container mx-auto max-w-4xl">
+              <h2 className="text-3xl font-bold mb-6 text-foreground">Overview</h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                {t('solutions.gpsTrackingDetail.overview')}
+              </p>
+            </div>
+          </section>
 
-      {/* Key Features */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">{t('solutions.keyFeatures')}</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((num) => (
-              <Card key={num}>
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground">
-                    {t(`solutions.gpsTrackingDetail.feature${num}`)}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
+          {/* Key Features（匹配目标格式：图标+hover效果+布局） */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center flex items-center justify-center gap-3">
+              <Zap className="w-8 h-8 text-primary" />
+              {t('solutions.keyFeatures')}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[1, 2, 3, 4].map((num) => (
+                <Card key={num} className="border-border hover:border-primary transition-colors">
+                  <CardHeader>
+                    <CardTitle className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                      <span>{t(`solutions.gpsTrackingDetail.feature${num}`)}</span>
+                    </CardTitle>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Technical Specifications（匹配目标格式：背景+卡片样式） */}
+          <section className="mb-16 bg-muted/30 rounded-2xl p-8">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+              {t('solutions.technicalSpecs')}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+              {[1, 2, 3, 4].map((num) => (
+                <Card key={num} className="bg-background">
+                  <CardHeader>
+                    <CardDescription className="text-base">
+                      {t(`solutions.gpsTrackingDetail.spec${num}`)}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* Use Cases（匹配目标格式：3列布局+hover阴影） */}
+          <section className="mb-16">
+            <h2 className="text-3xl font-bold text-foreground mb-8 text-center">
+              {t('solutions.useCases')}
+            </h2>
+            <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              {[1, 2, 3].map((num) => (
+                <Card key={num} className="border-border hover:shadow-lg transition-shadow">
+                  <CardHeader>
+                    <CardTitle className="text-lg">
+                      {t('solutions.comparison.useCase')} {num}
+                    </CardTitle>
+                    <CardDescription>
+                      {t(`solutions.gpsTrackingDetail.useCase${num}`)}
+                    </CardDescription>
+                  </CardHeader>
+                </Card>
+              ))}
+            </div>
+          </section>
+
+          {/* CTA Section（匹配目标格式：渐变背景+白色文字+圆角） */}
+          <div className="bg-gradient-to-br from-primary to-secondary rounded-2xl p-12 text-center text-white max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold mb-4">
+              {t('solutions.comparison.requestConsultation')}
+            </h2>
+            <p className="text-lg mb-8 opacity-90">
+              {t('solutions.gpsTrackingDetail.contactHint')}
+            </p>
+            <Button size="lg" variant="secondary" onClick={scrollToContact}>
+              {t('footer.contactUs')}
+            </Button>
           </div>
         </div>
-      </section>
-
-      {/* Technical Specifications */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">{t('solutions.technicalSpecs')}</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            {[1, 2, 3, 4].map((num) => (
-              <Card key={num}>
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground">
-                    {t(`solutions.gpsTrackingDetail.spec${num}`)}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases */}
-      <section className="py-16 px-4 bg-muted/30">
-        <div className="container mx-auto max-w-4xl">
-          <h2 className="text-3xl font-bold mb-8 text-foreground">{t('solutions.useCases')}</h2>
-          <div className="space-y-4">
-            {[1, 2, 3].map((num) => (
-              <Card key={num}>
-                <CardContent className="p-6">
-                  <p className="text-muted-foreground">
-                    {t(`solutions.gpsTrackingDetail.useCase${num}`)}
-                  </p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-16 px-4">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold mb-4 text-foreground">
-            Ready to Get Started?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8">
-            Contact us to learn more about our GPS Tracking solution
-          </p>
-          <Button size="lg" onClick={scrollToContact}>
-            Contact Us
-          </Button>
-        </div>
-      </section>
+      </main>
 
       <Footer />
     </div>

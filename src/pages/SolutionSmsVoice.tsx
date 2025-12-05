@@ -108,7 +108,7 @@ const SolutionSmsVoice = () => {
               {t('cta.description')}
             </p>
             <Button size="lg" variant="secondary" onClick={scrollToContact}>
-              {t('hero.contactUs')}
+              {t('footer.contactUs')}
             </Button>
           </div>
         </div>

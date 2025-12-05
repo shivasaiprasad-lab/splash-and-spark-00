@@ -35,7 +35,7 @@ const CTA = () => {
 
     try {
       // Target email address
-      const targetEmail = "INCLUSIVE-SALES@inclusive.com.cn";
+      const targetEmail = "Inclusive-Sales@inclusive.com.cn";
 
       // Title
       const subject = "New Contact Form Submission";

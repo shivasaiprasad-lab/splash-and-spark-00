@@ -116,7 +116,7 @@ const enTranslations = {
     companyPlaceholder: 'Company Name',
     submitButton: 'Request a Consultation',
     reachUs: 'Or reach us directly at:',
-    contactInfo: 'INCLUSIVE-SALES@inclusive.com.cn',
+    contactInfo: 'Inclusive-Sales@inclusive.com.cn',
   },
   solutions: {
     title: 'Enterprise IoT Solutions',
@@ -228,6 +228,7 @@ const enTranslations = {
       useCase1: 'International freight and container tracking',
       useCase2: 'Cold chain monitoring for pharmaceuticals and food',
       useCase3: 'High-value asset protection during cross-border transit',
+      contactHint: 'Contact us to learn more about our GPS Tracking solution',
     },
   },
   products: {
@@ -252,11 +253,6 @@ const enTranslations = {
   },
   footer: {
     companyDesc: 'Leading provider of IoT M2M connectivity solutions for businesses worldwide.',
-    services: 'Services',
-    iotConnectivity: 'IoT Connectivity',
-    m2mSolutions: 'M2M Solutions',
-    networkSecurity: 'Network Security',
-    dataManagement: 'Data Management',
     company: 'Company',
     aboutUs: 'About Us',
     careers: 'Careers',
@@ -477,7 +473,7 @@ const zhTranslations = {
     companyPlaceholder: '公司名称',
     submitButton: '申请咨询',
     reachUs: '或直接联系我们：',
-    contactInfo: 'INCLUSIVE-SALES@inclusive.com.cn',
+    contactInfo: 'Inclusive-Sales@inclusive.com.cn',
   },
   solutions: {
     title: '企业级物联网解决方案',
@@ -613,11 +609,6 @@ const zhTranslations = {
   },
   footer: {
       companyDesc: '全球领先的企业级物联网与m2m连接解决方案提供商。',
-      services: '服务项目',
-      iotConnectivity: '物联网连接',
-      m2mSolutions: 'm2m解决方案',
-      networkSecurity: '网络安全',
-      dataManagement: '数据管理',
       company: '公司信息',
       aboutUs: '关于我们',
       careers: '招贤纳士',
