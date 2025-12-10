@@ -255,13 +255,13 @@ const Header = () => {
               </DropdownMenuContent>
             </DropdownMenu>
 
-            {/* 其他导航按钮 */}
-            <button
-              onClick={() => navigateToHomeAnchor("about")}
-              className="text-foreground hover:text-primary transition-colors cursor-pointer select-none bg-transparent border-0 p-0"
+            {/* About Link */}
+            <Link
+              to="/about"
+              className="text-foreground hover:text-primary transition-colors cursor-pointer select-none"
             >
               {t("header.about")}
-            </button>
+            </Link>
             <button
               onClick={() => navigateToHomeAnchor("case-studies")}
               className="text-foreground hover:text-primary transition-colors cursor-pointer select-none bg-transparent border-0 p-0"
@@ -380,13 +380,13 @@ const Header = () => {
                   </div>
                 </div>
 
-                <a
-                  href="#about"
+                <Link
+                  to="/about"
                   className="text-foreground hover:text-primary transition-colors py-2 cursor-pointer select-none"
-                  onClick={(e) => handleMobileAnchorClick("about", e)}
+                  onClick={() => setMobileMenuOpen(false)}
                 >
                   {t("header.about")}
-                </a>
+                </Link>
                 <a
                   href="#case-studies"
                   className="text-foreground hover:text-primary transition-colors py-2 cursor-pointer select-none"

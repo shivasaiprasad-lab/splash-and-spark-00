@@ -9,6 +9,7 @@ import { PartnersMenuProvider } from "@/contexts/PartnersMenuContext";
 
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
+import AboutPage from "./pages/AboutPage";
 import CaseStudyEV from "./pages/CaseStudyEV";
 import CaseStudySmartMeter from "./pages/CaseStudySmartMeter";
 import CaseStudyGPS from "./pages/CaseStudyGPS";
@@ -35,6 +36,7 @@ const App = () => (
             <ScrollToTop />
             <Routes>
               <Route path="/" element={<Index />} />
+              <Route path="/about" element={<AboutPage />} />
               <Route path="/case-study/ev-telematics" element={<CaseStudyEV />} />
               <Route path="/case-study/smart-meter" element={<CaseStudySmartMeter />} />
               <Route path="/case-study/GPS-terminal" element={<CaseStudyGPS />} />
