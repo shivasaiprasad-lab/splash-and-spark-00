@@ -1,38 +1,44 @@
 [
   {
     "id": 1,
-    "name": "Master Agents",
-    "category": "Channel Partners",
-    "website_url": "*"
-  },
-  {
-    "id": 2,
-    "name": "System Integrators",
-    "category": "Channel Partners",
-    "website_url": "*"
-  },
-  {
-    "id": 3,
-    "name": "China Mobile International",
-    "category": "MNO Partners",
-    "website_url": "https://www.cmi.chinamobile.com/"
-  },
-  {
-    "id": 4,
     "name": "Tele2",
     "category": "MNO Partners",
     "website_url": "https://www.tele2.com/"
   },
   {
-    "id": 5,
+    "id": 2,
+    "name": "China Mobile International",
+    "category": "MNO Partners",
+    "website_url": "https://www.cmi.chinamobile.com/"
+  },
+  {
+    "id": 3,
+    "name": "China Unicom Global",
+    "category": "MNO Partners",
+    "website_url": "https://www.chinaunicomglobal.com/"
+  },
+  {
+    "id": 4,
     "name": "Airtel",
     "category": "MNO Partners",
     "website_url": "https://www.airtel.in/"
   },
   {
+    "id": 5,
+    "name": "T-mobile US",
+    "category": "MNO Partners",
+    "website_url": "https://www.t-mobile.com/"
+  },
+  {
     "id": 6,
+    "name": "Idemia",
+    "category": "Technology Alliances",
+    "website_url": "https://www.idemia.com/"
+  },
+  {
+    "id": 7,
     "name": "AWS",
     "category": "Technology Alliances",
-    "website_url": "https://www.airtel.in/"
+    "website_url": "https://aws.amazon.com/"
   }
 ]
