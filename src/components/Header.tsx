@@ -39,7 +39,6 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [partners, setPartners] = useState<Partner[]>([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [pendingAnchor, setPendingAnchor] = useState<string | null>(null);
   const navigate = useNavigate();
   const location = useLocation();
   const homePath = "/";
@@ -47,7 +46,7 @@ const Header = () => {
   // 接入全局合作伙伴菜单状态
   const { isPartnersMenuOpen, openPartnersMenu, closePartnersMenu, togglePartnersMenu } = usePartnersMenu();
 
-  // 保留原有 Partners 数据加载逻辑
+  // Partners 数据加载逻辑
   useEffect(() => {
     const loadPartners = async () => {
       try {
@@ -86,7 +85,7 @@ const Header = () => {
     return acc;
   }, {});
 
-  // 保留原有锚点滚动逻辑
+  // 锚点滚动逻辑
   const scrollToAnchorForce = useCallback((anchorId: string) => {
     const timerIds: number[] = [];
     const doScroll = () => {
@@ -122,18 +121,24 @@ const Header = () => {
     return () => timerIds.forEach(id => clearTimeout(id));
   }, []);
 
-  // 保留原有导航逻辑
+  // 导航逻辑
   const navigateToHomeAnchor = useCallback((anchorId: string) => {
     setMobileMenuOpen(false);
     if (location.pathname === homePath) {
       scrollToAnchorForce(anchorId);
       return;
     }
-    setPendingAnchor(anchorId);
-    navigate(homePath, { replace: true });
+    const goToHome = async () => {
+      navigate(`${homePath}#${anchorId}`, {replace: true});
+
+      setTimeout(() => {
+        scrollToAnchorForce(anchorId);
+      }, 100)
+    }
+    goToHome();
   }, [location.pathname, navigate, scrollToAnchorForce]);
 
-  // 保留原有路由监听逻辑
+  // 路由监听逻辑
   useEffect(() => {
     const hash = window.location.hash.replace("#", "");
     if (location.pathname === homePath && hash) {
@@ -141,7 +146,7 @@ const Header = () => {
     }
   }, [location.pathname, scrollToAnchorForce]);
 
-  // 保留原有移动端锚点处理
+  // 移动端锚点处理
   const handleMobileAnchorClick = (anchorId: string, e: React.MouseEvent) => {
     e.preventDefault();
     navigateToHomeAnchor(anchorId);
