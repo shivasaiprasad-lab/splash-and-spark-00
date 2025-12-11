@@ -8,26 +8,24 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 // Partner logo imports
-import tele2Logo from "@/assets/partners/tele2.jpg";
-import tmobileLogo from "@/assets/partners/tmobile.jpg";
-import airtelLogo from "@/assets/partners/airtel.jpg";
-import idemiaLogo from "@/assets/partners/idemia.jpg";
-import ciscoLogo from "@/assets/partners/cisco.jpg";
-import inclusiverPlatform from "@/assets/inclusiver-platform.jpg";
+import tele2Logo from "@/assets/partners/tele2.png";
+import tmobileLogo from "@/assets/partners/t-mobile.svg";
+import airtelLogo from "@/assets/partners/airtel.png";
+import idemiaLogo from "@/assets/partners/idemia.png";
 
 const AboutPage = () => {
   const { t } = useLanguage();
 
   const partners = [
     {
+      name: "TELE2",
+      logo: tele2Logo,
+      description: t("aboutPage.tele2Desc"),
+    },
+    {
       name: "T-Mobile USA",
       logo: tmobileLogo,
       description: t("aboutPage.tmobileDesc"),
-    },
-    {
-      name: "TELE2 Sverige",
-      logo: tele2Logo,
-      description: t("aboutPage.tele2Desc"),
     },
     {
       name: "Airtel",
@@ -39,18 +37,13 @@ const AboutPage = () => {
       logo: idemiaLogo,
       description: t("aboutPage.idemiaDesc"),
     },
-    {
-      name: "Cisco",
-      logo: ciscoLogo,
-      description: t("aboutPage.ciscoDesc"),
-    },
   ];
 
   const operations = [
-    { location: t("aboutPage.shanghai"), year: "2014", type: t("aboutPage.founded") },
-    { location: t("aboutPage.hongkong"), year: "", type: t("aboutPage.operations") },
-    { location: t("aboutPage.chicago"), year: "", type: t("aboutPage.operations") },
-    { location: t("aboutPage.fujian"), year: "", type: t("aboutPage.rdCenter") },
+    { location: t("about.chinaLocation"), year: "2014", type: t("aboutPage.founded") },
+    { location: t("about.HKLocation"), year: "", type: t("aboutPage.operations") },
+    { location: t("about.usaLocation"), year: "", type: t("aboutPage.operations") },
+    { location: t("about.indiaLocation"), year: "", type: t("aboutPage.operations") },
   ];
 
   const inclusiverFeatures = [
@@ -96,15 +89,13 @@ const AboutPage = () => {
           <h2 className="text-3xl md:text-4xl font-bold text-center text-foreground mb-12">
             {t("aboutPage.operationsTitle")}
           </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             {operations.map((op, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-primary/30 hover:border-primary bg-card">
                 <CardContent className="p-6 text-center">
                   <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform">
-                    {index === 0 ? (
+                    {index < 3 ? (
                       <Building className="w-6 h-6 text-white" />
-                    ) : index === 3 ? (
-                      <Cpu className="w-6 h-6 text-white" />
                     ) : (
                       <MapPin className="w-6 h-6 text-white" />
                     )}
@@ -134,12 +125,12 @@ const AboutPage = () => {
           <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
             {t("aboutPage.partnersSubtitle")}
           </p>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6 max-w-6xl mx-auto">
             {partners.map((partner, index) => (
               <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-border hover:border-primary bg-card overflow-hidden">
                 <CardContent className="p-6">
                   <div className="flex items-center gap-4 mb-4">
-                    <div className="w-16 h-16 rounded-lg bg-white flex items-center justify-center overflow-hidden shadow-sm">
+                    <div className="w-20 h-20 rounded-lg bg-white flex items-center justify-center overflow-hidden shadow-sm">
                       <img 
                         src={partner.logo} 
                         alt={partner.name} 
@@ -159,38 +150,29 @@ const AboutPage = () => {
       </section>
 
       {/* INCLUSIVER Platform Section */}
-      <section className="py-16 bg-background">
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
-            <div>
-              <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20">
-                {t("aboutPage.platformBadge")}
-              </Badge>
-              <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-                INCLUSIVER
-              </h2>
-              <p className="text-lg text-primary font-semibold mb-4">
-                {t("aboutPage.inclusiverTagline")}
-              </p>
-              <p className="text-muted-foreground mb-6">
-                {t("aboutPage.inclusiverDesc")}
-              </p>
-              <ul className="space-y-3">
-                {inclusiverFeatures.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
-                    <span className="text-foreground">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div className="rounded-xl overflow-hidden shadow-2xl">
-              <img 
-                src={inclusiverPlatform} 
-                alt="INCLUSIVER Platform" 
-                className="w-full h-auto"
-              />
-            </div>
+          <div className="text-center max-w-2xl mx-auto">
+            <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20">
+              {t("aboutPage.platformBadge")}
+            </Badge>
+            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+              INCLUSIVER
+            </h2>
+            <p className="text-lg text-primary font-semibold mb-4">
+              {t("aboutPage.inclusiverTagline")}
+            </p>
+            <p className="text-muted-foreground mb-6">
+              {t("aboutPage.inclusiverDesc")}
+            </p>
+            <ul className="space-y-3">
+              {inclusiverFeatures.map((feature, index) => (
+                <li key={index} className="flex items-start gap-3">
+                  <ChevronRight className="w-5 h-5 text-primary mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">{feature}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>
