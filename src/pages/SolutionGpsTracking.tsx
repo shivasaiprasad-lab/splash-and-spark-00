@@ -45,7 +45,7 @@ const SolutionGpsTracking = () => {
           {/* Overview Section - 完全保留原始结构和样式 */}
           <section className="py-16 px-4">
             <div className="container mx-auto max-w-4xl">
-              <h2 className="text-3xl font-bold mb-6 text-foreground">Overview</h2>
+              <h2 className="text-3xl font-bold mb-6 text-foreground">{t('solutions.comparison.overview')}</h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
                 {t('solutions.gpsTrackingDetail.overview')}
               </p>
