@@ -103,7 +103,7 @@ export const zhTranslations: TranslationSchema = {
     companyPlaceholder: '公司名称',
     submitButton: '申请咨询',
     reachUs: '或直接联系我们：',
-    contactInfo: 'Inclusive-Sales@inclusive.com.cn',
+    contactInfo: 'sales@inclusive.com.cn',
   },
   solutions: {
     title: '企业级物联网解决方案',

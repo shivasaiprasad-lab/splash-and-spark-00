@@ -103,7 +103,7 @@ export const enTranslations: TranslationSchema = {
     companyPlaceholder: 'Company Name',
     submitButton: 'Request a Consultation',
     reachUs: 'Or reach us directly at:',
-    contactInfo: 'Inclusive-Sales@inclusive.com.cn',
+    contactInfo: 'sales@inclusive.com.cn',
   },
   solutions: {
     title: 'Enterprise IoT Solutions',

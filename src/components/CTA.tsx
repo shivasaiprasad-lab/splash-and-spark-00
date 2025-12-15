@@ -1,13 +1,13 @@
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { ArrowRight } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import {Button} from "@/components/ui/button";
+import {Input} from "@/components/ui/input";
+import {ArrowRight} from "lucide-react";
+import {useLanguage} from "@/contexts/LanguageContext";
+import {useForm} from "react-hook-form";
+import {zodResolver} from "@hookform/resolvers/zod";
 import * as z from "zod";
-import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
-import { toast } from "@/components/ui/use-toast";
-import { useState } from "react";
+import {Form, FormControl, FormField, FormItem, FormMessage} from "@/components/ui/form";
+import {toast} from "@/components/ui/use-toast";
+import {useState} from "react";
 
 // Form check
 const formSchema = z.object({
@@ -35,7 +35,7 @@ const CTA = () => {
 
     try {
       // Target email address
-      const targetEmail = "Inclusive-Sales@inclusive.com.cn";
+      const targetEmail = "sales@inclusive.com.cn";
 
       // Title
       const subject = "New Contact Form Submission";
@@ -48,11 +48,8 @@ const CTA = () => {
         Company: ${values.company}
         `.trim();
 
-      // mailto link
-      const mailtoUrl = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-
       // Open mail App
-      window.location.href = mailtoUrl;
+      window.location.href = `mailto:${targetEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 
       // Hint
       toast({

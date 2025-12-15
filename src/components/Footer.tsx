@@ -1,13 +1,11 @@
 import logo from "@/assets/iisl-logo.png";
-import { Network, Mail, Phone, MapPin, Linkedin } from "lucide-react";
+import { Mail, MapPin } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { usePartnersMenu } from "@/contexts/PartnersMenuContext";
-import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
   const { language, t } = useLanguage();
   const { openPartnersMenu } = usePartnersMenu();
-  const navigate = useNavigate();
 
   // 处理 Partners 链接点击（兼容数据加载延迟）
   const handlePartnersClick = (e: React.MouseEvent) => {
@@ -72,8 +70,8 @@ const Footer = () => {
             <ul className="space-y-3 mb-5">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="mailto:Inclusive-Sales@inclusive.com.cn" className="hover:text-primary transition-colors">
-                  Inclusive-Sales@inclusive.com.cn
+                <a href="mailto:sales@inclusive.com.cn" className="hover:text-primary transition-colors">
+                  sales@inclusive.com.cn
                 </a>
               </li>
               {/*<li className="flex items-start gap-2 text-muted-foreground">*/}
