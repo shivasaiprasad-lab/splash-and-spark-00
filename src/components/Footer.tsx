@@ -5,7 +5,7 @@ import { usePartnersMenu } from "@/contexts/PartnersMenuContext";
 import { useNavigate } from "react-router-dom";
 
 const Footer = () => {
-  const { t } = useLanguage();
+  const { language, t } = useLanguage();
   const { openPartnersMenu } = usePartnersMenu();
   const navigate = useNavigate();
 
@@ -18,6 +18,15 @@ const Footer = () => {
       openPartnersMenu();
     }, 300);
   };
+
+  const addressInfo = {
+    name: t('footer.chinaOffice'),
+    location: t('footer.chinaLocation'),
+    googleUrl: 'https://maps.app.goo.gl/c2CDSEYzwN3FohW1A',
+    amapUrl: 'https://ditu.amap.com/place/B0J2G1AGC1',
+  }
+
+  const mapUrl = language === 'en' ? addressInfo.googleUrl : addressInfo.amapUrl;
 
   return (
     <footer className="bg-card border-t border-border">
@@ -74,15 +83,20 @@ const Footer = () => {
               {/*  </a>*/}
               {/*</li>*/}
             </ul>
-            
+
             <div className="space-y-2">
-              <div className="flex items-start gap-2 text-muted-foreground text-sm">
+              <a
+                href={mapUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-start gap-2 text-muted-foreground text-sm hover:text-foreground transition-colors"
+              >
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
                 <div>
-                  <p className="font-medium text-foreground">{t('footer.chinaOffice')}</p>
-                  <p>{t('footer.chinaLocation')}</p>
+                  <p className="font-medium text-foreground">{addressInfo.name}</p>
+                  <p>{addressInfo.location}</p>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
