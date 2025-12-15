@@ -51,27 +51,7 @@ const CaseStudies = () => {
           color: "from-purple-500 to-pink-500",
           link: "/case-study/GPS-terminal"
       },
-      // {
-      //     icon: Heart,
-      //     title: t('caseStudy.medical.shortTitle'),
-      //     industry: t('caseStudy.medical.badge'),
-      //     metric: t('caseStudy.medical.metric4'),
-      //     description: t('caseStudy.medical.subtitle'),
-      //     highlight: t('caseStudy.medical.highlight'),
-      //     color: "from-red-500 to-orange-500",
-      //     link: "/case-study/medical-device"
-      // },
-      // {
-      //     icon: Bike,
-      //     title: t('caseStudy.mobility.shortTitle'),
-      //     industry: t('caseStudy.mobility.badge'),
-      //     metric: t('caseStudy.mobility.metric4'),
-      //     description: t('caseStudy.mobility.subtitle'),
-      //     highlight: t('caseStudy.mobility.highlight'),
-      //     color: "from-indigo-500 to-blue-500",
-      //     link: "/case-study/shared-mobility"
-      // }
-      ];
+  ];
 
   return (
     <section id="case-studies" className="py-24 bg-muted/30">

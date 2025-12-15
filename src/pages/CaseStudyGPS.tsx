@@ -19,7 +19,7 @@ const CaseStudyGPS = () => {
         <div className="container mx-auto px-4">
           <Button
             variant="ghost"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/#case-studies')}
             className="mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />

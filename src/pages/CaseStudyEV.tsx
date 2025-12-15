@@ -20,7 +20,7 @@ const CaseStudyEV = () => {
           {/* Back Button */}
           <Button
             variant="ghost"
-            onClick={() => navigate('/')}
+            onClick={() => navigate('/#case-studies')}
             className="mb-8"
           >
             <ArrowLeft className="w-4 h-4 mr-2" />
@@ -49,7 +49,7 @@ const CaseStudyEV = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
               <Card>
                 <CardContent className="p-6 text-center">
-                  <div className="text-3xl font-bold text-primary mb-2">100+</div>
+                  <div className="text-3xl font-bold text-primary mb-2">180+</div>
                   <div className="text-muted-foreground">{t('caseStudy.ev.metric2')}</div>
                 </CardContent>
               </Card>

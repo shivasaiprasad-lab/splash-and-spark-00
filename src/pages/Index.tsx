@@ -5,8 +5,11 @@ import Solutions from "@/components/Solutions";
 import CaseStudies from "@/components/CaseStudies";
 import CTA from "@/components/CTA";
 import Footer from "@/components/Footer";
+import {useLanguage} from "@/contexts/LanguageContext.tsx";
+import {usePageMeta} from "@/hooks/usePageMeta.ts";
 
 const Index = () => {
+  usePageMeta();
   return (
     <div className="min-h-screen">
       <Header />
