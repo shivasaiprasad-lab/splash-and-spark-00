@@ -106,6 +106,7 @@ const CTA = () => {
                                     placeholder={t('cta.namePlaceholder')}
                                     className="bg-white/90 border-white/50 text-foreground placeholder:text-muted-foreground"
                                     {...field}
+                                    autoComplete="given-name"
                                 />
                               </FormControl>
                               <FormMessage className="text-white" />
@@ -123,6 +124,7 @@ const CTA = () => {
                                     placeholder={t('cta.emailPlaceholder')}
                                     className="bg-white/90 border-white/50 text-foreground placeholder:text-muted-foreground"
                                     {...field}
+                                    autoComplete="email"
                                 />
                               </FormControl>
                               <FormMessage className="text-white" />
@@ -140,6 +142,7 @@ const CTA = () => {
                                   placeholder={t('cta.companyPlaceholder')}
                                   className="bg-white/90 border-white/50 text-foreground placeholder:text-muted-foreground"
                                   {...field}
+                                  autoComplete="off"
                               />
                             </FormControl>
                             <FormMessage className="text-white" />
