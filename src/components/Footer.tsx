@@ -100,7 +100,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p>{t('footer.copyright')}</p>
+          <p><a
+            href="https://beian.miit.gov.cn/#/Integrated/recordQuery">
+            沪ICP备2024094413号-1</a> | {t('footer.copyright')}</p>
         </div>
       </div>
     </footer>
