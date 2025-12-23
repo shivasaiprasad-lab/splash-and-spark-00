@@ -13,6 +13,16 @@ export default defineConfig(({ mode }) => ({
         "172.17.0.1",
         "www.inclusive.com.cn",
         "inclusive.com.cn",],
+    hmr: {
+      protocol: "wss",
+      host: "inclusive.com.cn",
+      port: 443,
+      clientPort: 443,
+      client: {
+        host: "inclusive.com.cn",
+      },
+    },
+    cors: true,
   },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
