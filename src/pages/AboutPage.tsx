@@ -22,16 +22,16 @@ const AboutPage = () => {
       logo: tele2Logo,
       description: t("aboutPage.tele2Desc"),
     },
-    {
-      name: "T-Mobile USA",
-      logo: tmobileLogo,
-      description: t("aboutPage.tmobileDesc"),
-    },
-    {
-      name: "Airtel",
-      logo: airtelLogo,
-      description: t("aboutPage.airtelDesc"),
-    },
+    // {
+    //   name: "T-Mobile USA",
+    //   logo: tmobileLogo,
+    //   description: t("aboutPage.tmobileDesc"),
+    // },
+    // {
+    //   name: "Airtel",
+    //   logo: airtelLogo,
+    //   description: t("aboutPage.airtelDesc"),
+    // },
     {
       name: "IDEMIA",
       logo: idemiaLogo,
