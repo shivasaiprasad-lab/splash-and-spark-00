@@ -8,7 +8,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 
 const logoLinks: Record<string, string> = {
   "AWS": "https://aws.amazon.com",
-  "Airtel": "https://www.airtel.in",
+  // "Airtel": "https://www.airtel.in",
   "Tele2": "https://www.tele2.com",
   "TATA": "https://www.tatacommunications.com",
   "ZEEKR": "https://www.zeekrlife.com",
@@ -138,7 +138,7 @@ const CaseStudies = () => {
               className="flex animate-scroll-left gap-16 whitespace-nowrap"
               style={{ animationPlayState: isPaused ? 'paused' : 'running' }}
             >
-              {["AWS", "Airtel", "Tele2", "ZEEKR", "LEAPMOTOR", "SMART"].map((logo, index) => (
+              {["AWS", "Tele2", "ZEEKR", "LEAPMOTOR", "SMART"].map((logo, index) => (
                 <a
                   key={index}
                   href={logoLinks[logo]}
@@ -150,7 +150,7 @@ const CaseStudies = () => {
                 </a>
               ))}
               {/* Duplicate for seamless loop */}
-              {["AWS", "Airtel", "Tele2", "ZEEKR", "LEAPMOTOR", "SMART"].map((logo, index) => (
+              {["AWS", "Tele2", "ZEEKR", "LEAPMOTOR", "SMART"].map((logo, index) => (
                 <a
                   key={`dup-${index}`}
                   href={logoLinks[logo]}

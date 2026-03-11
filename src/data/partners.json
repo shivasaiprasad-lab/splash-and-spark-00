@@ -12,24 +12,6 @@
     "website_url": "https://www.cmi.chinamobile.com/"
   },
   {
-    "id": 3,
-    "name": "China Unicom Global",
-    "category": "MNO Partners",
-    "website_url": "https://www.chinaunicomglobal.com/"
-  },
-  {
-    "id": 4,
-    "name": "Airtel",
-    "category": "MNO Partners",
-    "website_url": "https://www.airtel.in/"
-  },
-  {
-    "id": 5,
-    "name": "T-mobile US",
-    "category": "MNO Partners",
-    "website_url": "https://www.t-mobile.com/"
-  },
-  {
     "id": 6,
     "name": "Idemia",
     "category": "Technology Alliances",
