@@ -1,15 +1,15 @@
 [
   {
-    "id": 1,
-    "name": "Tele2",
-    "category": "MNO Partners",
-    "website_url": "https://www.tele2.com/"
-  },
-  {
     "id": 2,
     "name": "China Mobile International",
     "category": "MNO Partners",
     "website_url": "https://www.cmi.chinamobile.com/"
+  },
+  {
+    "id": 5,
+    "name": "T-mobile US",
+    "category": "MNO Partners",
+    "website_url": "https://www.t-mobile.com/"
   },
   {
     "id": 6,

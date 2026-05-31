@@ -17,16 +17,16 @@ const AboutPage = () => {
   const { t } = useLanguage();
 
   const partners = [
-    {
-      name: "TELE2",
-      logo: tele2Logo,
-      description: t("aboutPage.tele2Desc"),
-    },
     // {
-    //   name: "T-Mobile USA",
-    //   logo: tmobileLogo,
-    //   description: t("aboutPage.tmobileDesc"),
+    //   name: "TELE2",
+    //   logo: tele2Logo,
+    //   description: t("aboutPage.tele2Desc"),
     // },
+    {
+      name: "T-Mobile USA",
+      logo: tmobileLogo,
+      description: t("aboutPage.tmobileDesc"),
+    },
     // {
     //   name: "Airtel",
     //   logo: airtelLogo,
