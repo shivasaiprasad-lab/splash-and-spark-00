@@ -70,8 +70,8 @@ const Footer = () => {
             <ul className="space-y-3 mb-5">
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="w-5 h-5 mt-0.5 flex-shrink-0" />
-                <a href="mailto:sales@inclusive.com.cn" className="hover:text-primary transition-colors">
-                  sales@inclusive.com.cn
+                <a href="mailto:sales@inclusive.global" className="hover:text-primary transition-colors">
+                  sales@inclusive.global
                 </a>
               </li>
               {/*<li className="flex items-start gap-2 text-muted-foreground">*/}
@@ -100,9 +100,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-border mt-12 pt-8 text-center text-muted-foreground">
-          <p><a
-            href="https://beian.miit.gov.cn/#/Integrated/recordQuery">
-            沪ICP备2024094413号-1</a> | {t('footer.copyright')}</p>
+          <p>{t('footer.copyright')}</p>
         </div>
       </div>
     </footer>

@@ -2,7 +2,7 @@
 
 ## Project info
 
-**URL**: [Inclusive](https://inclusive.com.cn)
+**URL**: [Inclusive](https://inclusive.global)
 
 ## How can I edit this code?
 
