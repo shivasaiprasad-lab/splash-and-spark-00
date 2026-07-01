@@ -2,9 +2,9 @@ import {TranslationSchema} from "@/types/translation.types.ts";
 
 export const enTranslations: TranslationSchema = {
   meta: {
-    title: "ISL - Inclusive Information Services | IoT M2M Connectivity Solutions",
+    title: "Inclusive Information Services | IoT M2M Connectivity Solutions",
     description: "Leading provider of IoT M2M connectivity solutions. Empowering seamless machine-to-machine communication with reliable, secure, and scalable infrastructure.",
-    ogTitle: "ISL - IoT M2M Connectivity Solutions",
+    ogTitle: "Inclusive - IoT M2M Connectivity Solutions",
     ogDescription: "Empowering seamless IoT M2M connectivity for the future of intelligent systems. 24/7 support, global coverage, enterprise-grade security.",
   },
   header: {
@@ -19,7 +19,7 @@ export const enTranslations: TranslationSchema = {
     noPartners: 'No partners available',
   },
   hero: {
-    companyName: 'ISL - Inclusive Information Services Limited',
+    companyName: 'Inclusive Information Services Limited',
     title1: 'Global IoT & M2M Connectivity,',
     title2: 'Engineered Locally',
     description: 'Powering millions of IoT devices across China, India, EU, USA, and Singapore with carrier-grade reliability',
@@ -31,7 +31,7 @@ export const enTranslations: TranslationSchema = {
   about: {
     title: 'Global IoT & M2M Connectivity, Engineered Locally',
     subtitle1: 'We bridge the gap between global reach and local expertise, delivering seamless IoT connectivity across continents.',
-    subtitle2: 'Trusted by enterprises worldwide, ISL powers millions of connected devices with carrier-grade reliability and regional compliance.',
+    subtitle2: 'Trusted by enterprises worldwide, Inclusive powers millions of connected devices with carrier-grade reliability and regional compliance.',
     globalOperations: 'Global Operations',
     active: 'Active',
     ourValues: 'Our Values',
@@ -97,7 +97,7 @@ export const enTranslations: TranslationSchema = {
   },
   cta: {
     title: "Let's Connect Your IoT Ecosystem",
-    description: 'Start your global IoT deployment with ISL. Contact us for a personalized consultation.',
+    description: 'Start your global IoT deployment with Inclusive. Contact us for a personalized consultation.',
     namePlaceholder: 'Your Name',
     emailPlaceholder: 'Email Address',
     companyPlaceholder: 'Company Name',
@@ -221,7 +221,7 @@ export const enTranslations: TranslationSchema = {
   },
   caseStudy: {
     title: 'Customer Success Stories',
-    subtitle: 'See how leading companies trust ISL for their global IoT deployments',
+    subtitle: 'See how leading companies trust Inclusive for their global IoT deployments',
     backToHome: 'Back to Home',
     theChallenge: 'The Challenge',
     ourSolution: 'Our Solution',
@@ -251,7 +251,7 @@ export const enTranslations: TranslationSchema = {
       result3: 'Seamless expansion of vehicles sales across continents without infrastructure changes',
       result4: 'Real-time diagnostics enabling predictive maintenance and reduced downtime',
       ctaTitle: 'Ready to Scale Your IoT Fleet?',
-      ctaDesc: "Let's discuss how ISL can power your connected vehicle solution",
+      ctaDesc: "Let's discuss how Inclusive can power your connected vehicle solution",
     },
     smartMeter: {
       badge: 'Energy',

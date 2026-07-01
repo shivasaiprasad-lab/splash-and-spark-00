@@ -2,9 +2,9 @@ import {TranslationSchema} from "@/types/translation.types.ts";
 
 export const zhTranslations: TranslationSchema = {
   meta: {
-    title: "ISL - 并蓄信息技术服务 | IoT M2M 连接解决方案",
+    title: "Inclusive - 并蓄信息技术服务 | IoT M2M 连接解决方案",
     description: "领先的IoT M2M连接解决方案提供商，为无缝的IoT通信提供可靠、安全且可扩展的基础设施。",
-    ogTitle: "ISL - IoT M2M 连接解决方案",
+    ogTitle: "Inclusive - IoT M2M 连接解决方案",
     ogDescription: "为智能系统的未来赋能无缝的IoT M2M连接，7×24小时支持、全球覆盖、企业级安全。",
   },
   header: {
@@ -19,7 +19,7 @@ export const zhTranslations: TranslationSchema = {
     noPartners: '暂无合作伙伴',
   },
   hero: {
-    companyName: 'ISL - 并蓄信息技术服务有限公司',
+    companyName: 'Inclusive - 并蓄信息技术服务有限公司',
     title1: '全球化物联网与m2m连接服务，',
     title2: '本地化专业部署',
     description: '为中国、印度、欧盟、美国及新加坡等地数百万台物联网设备提供运营商级可靠连接',
@@ -31,7 +31,7 @@ export const zhTranslations: TranslationSchema = {
   about: {
     title: '全球化物联网与m2m连接服务，本地化专业部署',
     subtitle1: '我们搭建全球覆盖与本地专长之间的桥梁，提供跨大洲的无缝物联网连接服务。',
-    subtitle2: '作为全球企业信赖的合作伙伴，ISL以运营商级可靠性和区域合规性，为数百万台联网设备提供网络服务支持。',
+    subtitle2: '作为全球企业信赖的合作伙伴，并蓄以运营商级可靠性和区域合规性，为数百万台联网设备提供网络服务支持。',
     globalOperations: '全球业务布局',
     active: '运营中',
     ourValues: '我们的价值观',
@@ -97,7 +97,7 @@ export const zhTranslations: TranslationSchema = {
   },
   cta: {
     title: '让我们助力您的物联网生态系统互联',
-    description: '与ISL携手，开启您的全球物联网部署之旅。联系我们获取个性化咨询服务。',
+    description: '与并蓄携手，开启您的全球物联网部署之旅。联系我们获取个性化咨询服务。',
     namePlaceholder: '您的姓名',
     emailPlaceholder: '电子邮箱',
     companyPlaceholder: '公司名称',
@@ -221,7 +221,7 @@ export const zhTranslations: TranslationSchema = {
   },
   caseStudy: {
     title: '客户成功案例',
-    subtitle: '了解领先企业如何信赖ISL的全球物联网部署服务',
+    subtitle: '了解领先企业如何信赖并蓄的全球物联网部署服务',
     backToHome: '返回首页',
     theChallenge: '面临挑战',
     ourSolution: '我们的解决方案',
@@ -251,7 +251,7 @@ export const zhTranslations: TranslationSchema = {
       result3: '无需更改基础设施，即可实现车辆销售的跨大洲无缝扩张',
       result4: '实时诊断功能支持预测性维护，减少停机时间',
       ctaTitle: '准备好扩展您的物联网车队？',
-      ctaDesc: '让我们探讨ISL如何为您的联网车辆解决方案提供支持',
+      ctaDesc: '让我们探讨并蓄如何为您的联网车辆解决方案提供支持',
     },
     smartMeter: {
       badge: '能源行业',
