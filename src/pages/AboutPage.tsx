@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { MapPin, Globe, Building, Users, Cpu, MessageSquare, ArrowRight, ChevronRight } from "lucide-react";
+import { MapPin, Globe, Building, Users, ArrowRight, ChevronRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import Header from "@/components/Header";
@@ -51,12 +51,6 @@ const AboutPage = () => {
     t("aboutPage.inclusiverFeature2"),
     t("aboutPage.inclusiverFeature3"),
     t("aboutPage.inclusiverFeature4"),
-  ];
-
-  const inclusivaFeatures = [
-    t("aboutPage.inclusivaFeature1"),
-    t("aboutPage.inclusivaFeature2"),
-    t("aboutPage.inclusivaFeature3"),
   ];
 
   return (
@@ -173,44 +167,6 @@ const AboutPage = () => {
                 </li>
               ))}
             </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* INCLUSIVA Robot Section */}
-      <section className="py-16 bg-gradient-to-br from-primary/5 via-background to-secondary/5">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="outline" className="mb-4 bg-accent/10 text-accent border-accent/20">
-              {t("aboutPage.aiBadge")}
-            </Badge>
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              INCLUSIVA
-            </h2>
-            <p className="text-lg text-primary font-semibold mb-4">
-              {t("aboutPage.inclusivaTagline")}
-            </p>
-            <p className="text-muted-foreground mb-8">
-              {t("aboutPage.inclusivaDesc")}
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
-              {inclusivaFeatures.map((feature, index) => (
-                <Card key={index} className="bg-card border-border hover:border-primary transition-colors">
-                  <CardContent className="p-6 text-center">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-accent to-primary flex items-center justify-center mx-auto mb-4">
-                      {index === 0 ? (
-                        <Cpu className="w-6 h-6 text-white" />
-                      ) : index === 1 ? (
-                        <Globe className="w-6 h-6 text-white" />
-                      ) : (
-                        <MessageSquare className="w-6 h-6 text-white" />
-                      )}
-                    </div>
-                    <p className="text-foreground font-medium">{feature}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
         </div>
       </section>
