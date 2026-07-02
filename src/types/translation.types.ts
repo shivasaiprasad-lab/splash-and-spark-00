@@ -93,6 +93,12 @@ export interface AboutPageTranslation {
   inclusiverFeature2: string;
   inclusiverFeature3: string;
   inclusiverFeature4: string;
+  aiBadge: string;
+  inclusivaTagline: string;
+  inclusivaDesc: string;
+  inclusivaFeature1: string;
+  inclusivaFeature2: string;
+  inclusivaFeature3: string;
   ctaTitle: string;
   ctaDesc: string;
   ctaButton: string;
