@@ -31,7 +31,7 @@ export const zhTranslations: TranslationSchema = {
   about: {
     title: '全球化物联网与m2m连接服务，本地化专业部署',
     subtitle1: '我们搭建全球覆盖与本地专长之间的桥梁，提供跨大洲的无缝物联网连接服务。',
-    subtitle2: '作为全球企业信赖的合作伙伴，ISL以运营商级可靠性和区域合规性，为数百万台联网设备提供网络服务支持。',
+    subtitle2: '作为全球企业信赖的合作伙伴，上海并蓄以运营商级可靠性和区域合规性，为数百万台联网设备提供网络服务支持。',
     globalOperations: '全球业务布局',
     active: '运营中',
     ourValues: '我们的价值观',
@@ -219,7 +219,7 @@ export const zhTranslations: TranslationSchema = {
   },
   caseStudy: {
     title: '客户成功案例',
-    subtitle: '了解领先企业如何信赖ISL的全球物联网部署服务',
+    subtitle: '了解领先企业如何信赖上海并蓄的全球物联网部署服务',
     backToHome: '返回首页',
     theChallenge: '面临挑战',
     ourSolution: '我们的解决方案',
