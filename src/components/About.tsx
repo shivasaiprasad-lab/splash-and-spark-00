@@ -16,10 +16,9 @@ const About = () => {
   ];
 
   const compliance = [
-    { name: t('about.miit'), description: t('about.miitDesc') },
-    { name: t('about.trai'), description: t('about.traiDesc') },
     { name: t('about.ce'), description: t('about.ceDesc') },
-    { name: t('about.fcc'), description: t('about.fccDesc') }
+    { name: t('about.fcc'), description: t('about.fccDesc') },
+    { name: t('about.trai'), description: t('about.traiDesc') },
   ];
   
   const values = [
