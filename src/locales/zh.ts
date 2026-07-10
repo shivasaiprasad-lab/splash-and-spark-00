@@ -226,7 +226,7 @@ export const zhTranslations: TranslationSchema = {
     results: '实施成果',
     contactUs: '联系我们',
     readMore: '阅读详情',
-    slogan: '与以下行业领军企业合作',
+    slogan: '携手行业伙伴，共创稳定合作',
     ev: {
       badge: '汽车行业',
       title: '电动汽车远程信息处理成功案例',
