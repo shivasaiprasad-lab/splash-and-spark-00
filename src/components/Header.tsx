@@ -162,7 +162,7 @@ const Header = () => {
           <div className="flex items-center gap-3">
             <img src={logo} alt="IISL Logo" className="h-10 w-10" />
             <span className="font-bold text-lg text-foreground hidden sm:inline-block">
-              ISL
+              Inclusive
             </span>
           </div>
 

@@ -75,7 +75,7 @@ const Footer = () => {
                 </a>
               </li>
               {/*<li className="flex items-start gap-2 text-muted-foreground">*/}
-              {/*  <Linkedin className="w-5 h-5 mt-0.5 flex-shrink-0" />*/}
+              {/*  <LinkedIn className="w-5 h-5 mt-0.5 flex-shrink-0" />*/}
               {/*  <a href="https://linkedin.com/company/isl" target="_blank" rel="noopener noreferrer" className="hover:text-primary transition-colors">*/}
               {/*    LinkedIn*/}
               {/*  </a>*/}
