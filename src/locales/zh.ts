@@ -206,7 +206,7 @@ export const zhTranslations: TranslationSchema = {
     },
   },
   footer: {
-    companyDesc: '全球领先的企业级物联网与m2m连接解决方案提供商。',
+    companyDesc: '全球知名的企业级物联网与m2m连接解决方案提供商。',
     company: '公司信息',
     aboutUs: '关于我们',
     careers: '招贤纳士',
@@ -219,7 +219,7 @@ export const zhTranslations: TranslationSchema = {
   },
   caseStudy: {
     title: '客户成功案例',
-    subtitle: '了解领先企业如何信赖上海并蓄的全球物联网部署服务',
+    subtitle: '了解客户企业如何信赖上海并蓄的全球物联网部署服务',
     backToHome: '返回首页',
     theChallenge: '面临挑战',
     ourSolution: '我们的解决方案',
