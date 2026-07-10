@@ -81,9 +81,7 @@ export interface AboutPageTranslation {
   rdCenter: string;
   partnersTitle: string;
   partnersSubtitle: string;
-  tmobileDesc: string;
   tele2Desc: string;
-  airtelDesc: string;
   idemiaDesc: string;
   ciscoDesc: string;
   platformBadge: string;
